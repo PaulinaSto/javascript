@@ -12,7 +12,7 @@
 // - - - - - - - - - - -
 var app = window.app || new Object(); // Defaultoperator!
 
-app.events = (function () {
+app.events = (function (ajax) {
 'use strict';
 // - - - - - - - -
 
@@ -21,8 +21,10 @@ app.events = (function () {
 	var
 		fn   = {},
 		data = {},
+		obj  = {},
 		collection = [],
 		onClick    = function () {},
+		onAnchorClick    = function () {},
 		onBtnRemoveClick = function () {},
 	endvar;
 	
@@ -50,14 +52,41 @@ app.events = (function () {
 		// Eventauslösenden Objekt ermitteln
 		var selector = event.target.getAttribute('data-selector');
 
+		// for ( var member in event) {
+		// 	console.log(member + ' [' + typeof event[member] + ']');
+		// }
+
 		if (selector) {
 			fn.remove(selector);
 		}
 	};
 
+	onAnchorClick = function(){
+		event.preventDefault();
+
+		var url = undefined;
+
+		// Eventauslösendes Objekt ermitteln
+		console.log(event.target.tagName);
+		console.log(event.currentTarget);
+
+		// if (event.target.tagName === 'A')
+
+		// Url ermitteln
+		url = event.target.getAttribute('href');
+
+		// Loader aufrufen
+		if (url) {
+			ajax.load(url);
+		};
+	};
+
 	onClick = function (event) { 
 		// Den Browser daran hindern, etwas zu tun!
 		event.preventDefault();
+
+		// Propagation stoppen
+		// event.stopPropagation();
 
 		// DOM Veränderungen
 		var 
@@ -88,15 +117,19 @@ app.events = (function () {
 	for ( var i=0; i<collection.length; i++ ) {
 		collection[i].addEventListener('click', onClick);
 	}
+
+	obj = document.querySelector('#nav-main');
+	obj.addEventListener('click', onAnchorClick, false); // useCapturing Flag auf false setzen für Eventdelegation
+	
+	// $('nav').on('click', 'a', data, handler);
+
 	// Publikation
 	return fn;
 // - - - - - - - -
-})();
+})(app.ajax);
 
 
 app.events.log('Hallo Modul!');
-
-
 
 /*
 
@@ -106,7 +139,8 @@ Implementieren Sie einen Button, der das neue Element wieder löscht (bei Click)
 
 im HTML: <button>Löschen</button>
 
-
+Implementieren Sie eine Funktion, die den Klick auf einen Anchor abfängt und die URL ermittelt.
+Damit soll dann eine load() Funktion aufgerufen werden, die per Ajax die angeforderte Seite lässt.
 */
 
 

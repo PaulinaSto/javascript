@@ -4,6 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Javascript Basics</title>
 	<link rel="stylesheet" href="sources/css/navigation.css">
+
+	<meta http-equiv="pragma" content="no-cache">
+	<meta name="expires" content="0">
+
 </head>
 <body>
 
@@ -12,7 +16,8 @@
 		<ul>
 			<li><a class="active" href="index.html">Startseite</a></li>
 			<li><a href="page-2.html">Seite 2</a></li>
-			<li><a href="page-3.html">Seite 3</a></li>
+			<li><a href="data.json">Seite 3 als JSON</a></li>
+			<li><button>Klick</button></li>
 		</ul>
 	</nav>
 	<!-- /Navigationskomponente -->
@@ -21,16 +26,19 @@
 	<button class="btn-remove" data-selector="#nav-main li:last-of-type">Anchor löschen</button>
 	<button class="btn-remove" data-selector="h1">Überschriften löschen</button>
 
-	<h1 id="my-id">Überschriften</h1>
+	<main id="main-content">
+		<h1 id="my-id">Überschriften</h1>
 
-	
-	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-	
-	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-	
-	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+		
+		<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+		
+		<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+		
+		<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+	</main>
 	
 	<script src="sources/js/config.js"></script>
+	<script src="sources/js/ajax.js"></script>
 	<script src="sources/js/events.js"></script>
 
 	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
