@@ -1,8 +1,5 @@
-{
-	"links"   : { "Seite2" : "seite2.html", "Seite3" : "seite3.html", "Seite4" : "seite4.html" },
-	"key"     : "value",
-	"number"  : 1,
-	"boolean" : true,
-	"object"  : { "key":"value"},
-	"array"   : [1,2,3,4]
-}
+[
+	{"name":"Michael","email":"michael@zenbox.de"},
+	{"name":"Paul","email":"paul@zenbox.de"},
+	{"name":"Klara","email":"klara@zenbox.de"}
+]

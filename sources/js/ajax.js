@@ -54,7 +54,8 @@ app.ajax = (function () {
 				//var serialString = JSON.stringify(data);
 
 				var data = JSON.parse(xhr.responseText);
-				console.log(data.links.Seite2);
+				console.log(data[0].name);
+				console.log(data[0].email);
 				break;
 		};
 

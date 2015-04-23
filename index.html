@@ -16,11 +16,26 @@
 		<ul>
 			<li><a class="active" href="index.html">Startseite</a></li>
 			<li><a href="page-2.html">Seite 2</a></li>
-			<li><a href="data.json">Seite 3 als JSON</a></li>
+			<li><a href="server.php" data-format="json">Seite 3 als JSON</a></li>
 			<li><button>Klick</button></li>
 		</ul>
 	</nav>
 	<!-- /Navigationskomponente -->
+
+
+	<form action="server.php">
+		<div>
+			<label for="email">Email</label>
+			<input  id="email" type="email" name="email" value="michael@zenbox.de">
+		</div>
+		<div>
+			<label for="password">Passwort</label>
+			<input  id="password" type="password" name="password" value="geheim">
+		</div>
+		<div>
+			<input type="submit" value="Login">
+		</div>
+	</form>
 
 	<button class="btn-remove" data-selector="p:last-of-type">Absätze löschen</button>
 	<button class="btn-remove" data-selector="#nav-main li:last-of-type">Anchor löschen</button>
