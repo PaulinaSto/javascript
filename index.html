@@ -10,17 +10,7 @@
 	<style>
 		form, p, nav { margin : 2em 0; }
 	</style>
-
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-	<script>
-	var map = undefined;
-	function initialize() {
-  		var mapOptions = {
-    						zoom: 6
-  						 };
-  		map = new google.maps.Map(document.querySelector('#map-canvas'), mapOptions);
-  	}
-  </script>
 </head>
 <body>
 
@@ -63,7 +53,7 @@
 		<li><h2>Geodaten:</h2>
 	</ul>
 
-	<canvas id="map-canvas"></canvas>
+	<div id="map-canvas"></div>
 
 	<main id="main-content">
 		<h1 id="my-id">HTML ist ganz toll!</h1>

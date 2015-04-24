@@ -6,6 +6,7 @@
  * @since 23.04.2015
  */
 
+
 var app = window.app || new Object();
 
 app.geo = (function () {
@@ -14,8 +15,14 @@ app.geo = (function () {
 
 	var 
 		fn   = {},
+		map  = undefined,
 		data = {},
 	endvar;
+
+	fn.initialize = function () {
+		var mapOptions = { zoom: 6 };
+		map = new google.maps.Map(document.querySelector('#map-canvas'), mapOptions);
+	}
 
 	fn.getData = function () {
 
@@ -34,8 +41,6 @@ app.geo = (function () {
 			
 			data.timestamp = position.timestamp;
 
-			console.dir(data);
-
 			// Domausgabe
 			for ( var member in data ) {
 				var element = document.createElement('li');
@@ -46,14 +51,12 @@ app.geo = (function () {
 
 			// Google Maps Ausgabe
 
-    		var pos = new google.maps.LatLng(data.latitude, data.longitude);
+    		var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     		var infowindow = new google.maps.InfoWindow({
 													        map: map,
 													        position: pos,
 													        content: 'Location found using HTML5.'
      		});
-
-    		initialize();
 			map.setCenter(pos);
 
 		// navigator.userAgent -> String mit Browser und Systeminfos
@@ -67,10 +70,12 @@ app.geo = (function () {
 })();
 
 window.onload = function () {
-'use stict';
+'use strict';
 // - - - - - - - -
 
 	app.geo.getData();
+	app.geo.initialize();
+
 
 // - - - - - - - -
 };
