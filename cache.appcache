@@ -1,0 +1,22 @@
+CACHE MANIFEST
+
+# version 7
+
+CACHE:
+index.html
+fallback.html
+
+sources/css/navigation.css
+
+sources/js/config.js
+sources/js/ajax.js
+sources/js/events.js
+sources/js/storage.js
+sources/js/cache.js
+
+
+NETWORK:
+server.php
+
+FALLBACK:
+server.php fallback.html

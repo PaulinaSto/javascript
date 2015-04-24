@@ -7,7 +7,9 @@
 
 	<meta http-equiv="pragma" content="no-cache">
 	<meta name="expires" content="0">
-
+	<style>
+		form, p, nav { margin : 2em 0; }
+	</style>
 </head>
 <body>
 
@@ -18,6 +20,8 @@
 			<li><a href="page-2.html">Seite 2</a></li>
 			<li><a href="server.php" data-format="json">Seite 3 als JSON</a></li>
 			<li><button>Klick</button></li>
+			<li><button id="worker-on">Worker on</button></li>
+			<li><button id="worker-off">Worker off</button></li>
 		</ul>
 	</nav>
 	<!-- /Navigationskomponente -->
@@ -33,16 +37,19 @@
 			<input  id="password" type="password" name="password" value="geheim">
 		</div>
 		<div>
-			<input type="submit" value="Login">
+			<button type="submit">Login</button>
+			<button type="reset">Reset</button>
 		</div>
 	</form>
 
+	<p>
 	<button class="btn-remove" data-selector="p:last-of-type">Absätze löschen</button>
 	<button class="btn-remove" data-selector="#nav-main li:last-of-type">Anchor löschen</button>
 	<button class="btn-remove" data-selector="h1">Überschriften löschen</button>
-
+	</p>
+	
 	<main id="main-content">
-		<h1 id="my-id">Überschriften</h1>
+		<h1 id="my-id">HTML ist ganz toll!</h1>
 
 		
 		<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
@@ -52,16 +59,11 @@
 		<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
 	</main>
 	
-	<script src="sources/js/config.js"></script>
-	<script src="sources/js/ajax.js"></script>
-	<script src="sources/js/events.js"></script>
-
-	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-	
-	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-	
-	<p>Sed posuere consectetur est at lobortis. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-	
-
+<!-- script src="sources/js/cache.js"></script -->
+<script src="sources/js/config.js"></script>
+<script src="sources/js/ajax.js"></script>
+<script src="sources/js/events.js"></script>
+<script src="sources/js/storage.js"></script>	
+<script src="sources/js/main-for-worker.js"></script>	
 </body>
 </html>
